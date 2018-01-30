@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration >
+<!-- 取别名 -->
+<typeAliases>
+	<typeAlias type="com.mybatis.pojo.Tuser" alias="Tuser"></typeAlias>
+</typeAliases>
+<!-- environment  环境 -->
+<environments default="develop">
+	<environment id="develop">
+		<!-- 配置当前操作的事务类型 -->
+		<transactionManager type="jdbc"></transactionManager>
+		<!-- 配置数据源采用连接池 -->
+		<dataSource type="POOLED">
+			<property name="driver" value="com.mysql.jdbc.Driver" />
+			<property name="url" value="jdbc:mysql:///text11" />
+			<property name="username" value="root" />
+			<property name="password" value="root" />
+		</dataSource>
+	</environment>
+</environments>
+<mappers>
+	<mapper resource="com/mybatis/mapper/UserMapper.xml" />
+</mappers>
+</configuration>
